@@ -1,52 +1,27 @@
-# Проверка версии 2.0.0
+# Проверки Veyron Workshop 3.0
 
-Дата: 5 ноября 2026 года.
+Выполнены 43 автоматизированные проверки: 21 проверка логики, 15 проверок интерфейса в эмуляции DOM и 7 проверок геометрии/движения.
 
-31 автоматизированная проверка пройдена. Проверяется фактическая логика из собранного index.html.
+## Логика
 
-## Логика оценки
+Миграция существующей доски, пять исполнителей ДЕМО, параллельные зависимости, семидневный план, рабочие даты, критический путь, блокировка циклов, недопустимых данных и раннего завершения, переносы задач/строк, объединение правок и конфликтов. Все проверки пройдены.
 
-- PASS — Complete four-jurisdiction case is preliminary ok
-- PASS — Missing organizer cannot complete
-- PASS — Two of four sources is incomplete
-- PASS — Potential name match is consultation, not automatic legal ban
-- PASS — Confirmed blocking organizer is stop
-- PASS — Sanctioned visitor is reviewed according to role
-- PASS — Blocked bank separately restricts payment
-- PASS — Expired evidence requires recheck
-- PASS — Missing identification prevents positive assessment
-- PASS — Unknown ownership escalates
-- PASS — Unapproved base methodology is explicit
-- PASS — Paid participation needs payee and bank
-- PASS — Approved disclosure needs evidence and scope
-- PASS — Sensitive production and headcount text detected
-- PASS — No dictionary matches does not complete material review
-- PASS — Manual review requires identified version and full checklist
-- PASS — Personal rules cannot replace mandatory checklist
-- PASS — Material change invalidates decision fingerprint
-- PASS — Finding disposition is covered by decision fingerprint
-- PASS — Opening Gandiva never marks case approved
-- PASS — Date interval validation prevents future screening
-- PASS — No confidential template payload or credentials in output
+## Интерфейс
 
-## Документы и криптография
+Инициализация, вкладки, задачи и комплексные задачи, создание и назначение, комментарии с автором, диаграмма Ганта, отдельный ДЕМО-проект, последовательность до цели, возврат без потери исходной доски, отмена действий, ручное изменение заголовка и отклонение пустого названия. Все проверки пройдены.
 
-- PASS — PPTX extracts visible, hidden slides and speaker notes
-- PASS — PPTX parsed text triggers required categories
-- PASS — DOCX extracts tracked deletions and comments
-- PASS — Corrupt ZIP is rejected
-- PASS — Archive entry count limit is enforced
-- PASS — Encrypted backup round-trip uses AES-GCM and no plaintext
-- PASS — Tampered ciphertext is rejected
-- PASS — ECDSA package verifies; changed payload fails
-- PASS — Methodology import rejects invalid contacts and duplicate rules
+Проверки интерфейса выполнялись в Node.js / linkedom. Это эмуляция DOM; она не подтверждает компоновку в реальном браузере, WebGL, фактическую частоту кадров или поведение на каждом мобильном устройстве.
 
-Разбор PPTX/DOCX проверен на синтетических архивах: видимые и скрытые слайды, заметки, свойства, комментарии и удалённый текст. Для офлайн-теста XML использован адаптер DOM поверх xml-js. Это не проверка интерфейса в браузере.
+## Модель и движение
 
-## Ограничение проверки интерфейса
+- 18 отдельных групп компонентов; четыре вращаемых колеса.
+- Конечные координаты и нормали всех вершин.
+- Колёсная база 2,71 условного метра; проверка габаритных пропорций.
+- Разнесённые детали в начале и точное соединение всех групп в конце сборки.
+- Последовательность сборки без изменения непрозрачности кузова.
+- Монотонный путь 72 условных метра с нулевой скоростью на старте и финише.
+- Отсутствие фотографий пользователя, растровых текстур, сетевых вызовов и внешних медиа в приложении.
 
-5 ноября 2026 года пользователь явно разрешил повторную браузерную проверку. Повторное открытие http://127.0.0.1:8765 также было отклонено: браузер сообщил о сохранённом запрете доступа или управляемой политике (saved permission or managed policy). Разрешение в чате не отменило эту настройку. Визуальная проверка, клики, реальная загрузка через интерфейс и мобильная компоновка в браузере не подтверждены. Обход ограничения не выполнялся. Для продолжения требуется снять сохранённый запрет для указанного адреса или изменить управляющую политику.
+Все проверки пройдены. Геометрия дополнительно отрисована через тот же Canvas 2D fallback для визуального осмотра.
 
-## Границы продукта
-
-Автономный HTML без серверной части. Ручной санкционный скрининг, локальный словарный анализ материалов, шифрование копий и проверка подписанных пакетов. Нет автоматического подтверждения из Gandiva 2, корпоративной SSO-авторизации, центрального журнала, OCR и автоматической актуализации санкционных перечней. Статус методики, источники и технические ограничения явно отображаются в приложении.
+Результаты публикации и проверки публичной страницы фиксируются ниже после развертывания.

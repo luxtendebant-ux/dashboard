@@ -298,7 +298,7 @@ function createVeyronModel(T){
   const cabin=part('14 · Салон и сиденья');for(const s of [-1,1]){ell(cabin,[.25,.31,.23],[.1,.64,s*.34],'black');box(cabin,[.25,.12,.32],[-.08,.43,s*.34],'carbon');}box(cabin,[.3,.16,1.2],[-.55,.65,0],'carbon');
   mesh(new T.TorusGeometry(.14,.018,6,24),'silver',-.38,.79,-.35,cabin).rotation.y=Math.PI/2;
   // Glazing is a lofted dome, not a flat box. Side glazing and curved roof are distinct parts.
-  function canopy(parent,mat,roof){const v=[],ix=[],N=20,M=24;for(let i=0;i<=N;i++){const u=i/N,x=-.85+1.85*u,shape=Math.pow(Math.sin(Math.PI*u),.65),w=.68*shape+.12;for(let j=0;j<=M;j++){const th=Math.PI*j/M;v.push(x,.76+Math.sin(th)*.44*shape,Math.cos(th)*w);}}for(let i=0;i<N;i++)for(let j=0;j<M;j++){const mid=(j+.5)/M;if(roof?(mid<.25||mid>.75):false)continue;const k=i*(M+1)+j;ix.push(k,k+1,k+M+1,k+1,k+M+2,k+M+1);}const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();mesh(g,mat,0,0,0,parent);}
+  function canopy(parent,mat,roof){const v=[],ix=[],N=20,M=24;for(let i=0;i<=N;i++){const u=i/N,x=-.85+1.85*u,shape=Math.pow(Math.sin(Math.PI*u),.65),w=.68*shape+.12;for(let j=0;j<=M;j++){const th=Math.PI*j/M;v.push(x,.76+Math.sin(th)*.44*shape,Math.cos(th)*w);}}for(let i=0;i<N;i++)for(let j=0;j<M;j++){const mid=(j+.5)/M;const onRoof=mid>=.25&&mid<=.75&&i>=4&&i<16;if(roof?!onRoof:onRoof)continue;const k=i*(M+1)+j;ix.push(k,k+1,k+M+1,k+1,k+M+2,k+M+1);}const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();mesh(g,mat,0,0,0,parent);}
   const glass=part('15 · Лобовое и боковые стёкла');canopy(glass,'glass',false);
   const roof=part('16 · Дугообразная крыша и стойки');canopy(roof,'carbon',true);
   for(const x of [-.57,.77]){const sh=Math.pow(Math.sin(Math.PI*(x+.85)/1.85),.65),w=.68*sh+.12;const pts=[];for(let j=0;j<=12;j++){const th=j*Math.PI/12;pts.push([x,.76+Math.sin(th)*.443*sh,Math.cos(th)*w]);}tube(roof,pts,.027,'gold');}
@@ -430,7 +430,7 @@ const VeyronViewport=(()=>{
     e.car.root.traverse(o=>{if(!o.isMesh)return;const pos=o.geometry.attributes.position,idx=o.geometry.index,mat=Array.isArray(o.material)?o.material[0]:o.material,nm=new T.Matrix3().getNormalMatrix(o.matrixWorld),nattr=o.geometry.attributes.normal;const count=idx?idx.count:pos.count;
       for(let i=0;i<count;i+=3){const coords=[],normal=new T.Vector3();let depth=0,skip=false;for(let j=0;j<3;j++){const k=idx?idx.getX(i+j):i+j;p.fromBufferAttribute(pos,k).applyMatrix4(o.matrixWorld).project(camera);if(p.z>1||p.z< -1)skip=true;coords.push([(p.x*.5+.5)*w,(-p.y*.5+.5)*h]);depth+=p.z;if(nattr)normal.add(new T.Vector3().fromBufferAttribute(nattr,k).applyMatrix3(nm));}if(skip)continue;normal.normalize();const intensity=.43+.57*Math.abs(normal.dot(light)),c=mat.color.clone().multiplyScalar(intensity);faces.push({coords,depth,color:'#'+c.getHexString(),alpha:mat.transparent?mat.opacity:1});}});
     ctx.fillStyle='#28343a';ctx.beginPath();ctx.ellipse(w*.51,h*.78,w*.34,h*.045,0,0,Math.PI*2);ctx.fill();
-    faces.sort((a,b)=>b.depth-a.depth);for(const f of faces){ctx.globalAlpha=f.alpha;ctx.fillStyle=f.color;ctx.beginPath();ctx.moveTo(...f.coords[0]);ctx.lineTo(...f.coords[1]);ctx.lineTo(...f.coords[2]);ctx.closePath();ctx.fill();}ctx.globalAlpha=1;
+    faces.sort((a,b)=>b.depth-a.depth);for(const f of faces){ctx.globalAlpha=f.alpha;ctx.fillStyle=f.color;ctx.beginPath();ctx.moveTo(...f.coords[0]);ctx.lineTo(...f.coords[1]);ctx.lineTo(...f.coords[2]);ctx.closePath();ctx.fill();if(f.alpha===1){ctx.strokeStyle=f.color;ctx.lineWidth=.4;ctx.stroke();}}ctx.globalAlpha=1;
   }
   function sync(state){
     const target=ROOT.querySelector('[data-veyron-demo]')||ROOT.querySelector('[data-veyron-header]');if(!target)return;
@@ -447,8 +447,8 @@ const VeyronViewport=(()=>{
     for(const wheel of e.car.wheels)wheel.rotation.z=distance/.344;
     // The camera tracks a single continuous path. No jitter, vibration or random offsets.
     const exploded=phase==='tasks'||phase==='assemble',focus=-distance;
-    const zoom=phase==='tasks'?1.4:phase==='assemble'?1.4-.4*VeyronMotion.smooth(fraction):1,aspect=e.camera.aspect,fit=aspect<1?1.15:1;
-    e.camera.position.set(focus-4.7*zoom*fit,2.1*zoom*fit,3.7*zoom*fit);e.camera.lookAt(focus,.5,0);
+    const zoom=phase==='tasks'?2:phase==='assemble'?1+VeyronMotion.smooth((1-fraction)/.15):1,aspect=e.camera.aspect,fit=aspect<1?1.45:1;
+    e.camera.position.set(focus-4.7*zoom*fit,2.1*zoom*fit,3.7*zoom*fit);e.camera.lookAt(focus,.5+(zoom-1)*.6,0);
     e.key.position.set(focus-3,7,5);e.key.target.position.set(focus,0,0);if(!e.key.target.parent)e.scene.add(e.key.target);
     e.finish.visible=phase==='race'||phase==='finish';
     if(e.renderer)e.renderer.render(e.scene,e.camera);else software(e,w,h);

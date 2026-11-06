@@ -1,0 +1,51 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const html=fs.readFileSync(require('node:path').join(__dirname,'../index.html'),'utf8'),code=html.match(/<script>([\s\S]*?)<\/script>/)[1];
+const resultDir=require('node:path').join(__dirname,'../work/test-results');fs.mkdirSync(resultDir,{recursive:true});
+const values=new Map(),handlers={};
+const el={innerHTML:'',textContent:'',inert:false,isConnected:true,style:{},dataset:{},classList:{contains:()=>false,add(){},remove(){},toggle(){}},querySelectorAll:()=>[],querySelector:()=>el,insertAdjacentHTML(){},setAttribute(){},append(){},remove(){},click(){},focus(){}};
+const ctx={console,structuredClone,crypto:crypto.webcrypto,Intl,Date,Blob,matchMedia:()=>({matches:false}),setTimeout:()=>1,clearTimeout(){},requestAnimationFrame:()=>1,cancelAnimationFrame(){},localStorage:{getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)},URL:{createObjectURL:()=>'',revokeObjectURL(){}},document:{body:el,getElementById:()=>el,querySelector:()=>el,querySelectorAll:()=>[],createElement:()=>({...el}),addEventListener:(n,f)=>{(handlers[n]??=[]).push(f)}},window:{scrollTo(){}}};
+vm.createContext(ctx);vm.runInContext(code,ctx);const run=s=>vm.runInContext(s,ctx);let count=0;function ok(s,label){assert(run(s),label);count++;}function fail(s,pattern){assert.throws(()=>run(s),pattern);count++;}
+ok('S.tasks.length===13 && validState(S)','valid initial state');ok("S.people.map(p=>p.name).join('|').includes('Винсент Вега')",'names');
+run("const qaProject=createProjectRecord({name:'QA lifecycle',goal:'End to end',due:'2026-11-13'});const qa={title:'A',description:'Filled',owner:'anna',project:qaProject,start:'2026-11-06',due:'2026-11-09',checks:[{text:'Documents'},{text:'Review'}]};const first=createTaskRecord(qa);const second=createTaskRecord({...qa,title:'B',depends:[first]});");
+ok("requireTask(first).stage==='inbox' && S.activity[0].taskId===second",'creation and audit');
+fail("createTaskRecord({...qa,start:'2026-11-10',due:'2026-11-09'})",/Срок/);
+fail("createTaskRecord({...qa,due:'2026-02-30'})",/Срок/);
+fail("createTaskRecord({...qa,title:' '})",/название/);
+fail("createTaskRecord({...qa,checks:[]})",/шагов/);
+fail("setCheck(first,0,true)",/В работе/);
+fail("updateTaskRecord(first,{stage:'done'})",/Маршрут/);
+fail("updateTaskRecord(second,{stage:'work'})",/предшествующие/);
+run("updateTaskRecord(first,{stage:'work'});setCheck(first,0,true);setCheck(first,1,true)");
+fail("updateTaskRecord(first,{stage:'review'})",/результат/);
+run("updateTaskRecord(first,{result:'Complete with evidence',stage:'review'})");
+fail("setCheck(first,0,false)",/В работе/);
+run("V2.actor='anna'");fail("updateTaskRecord(first,{stage:'done'})",/руководитель/);
+run("V2.actor='leader';updateTaskRecord(first,{stage:'done'});updateTaskRecord(second,{stage:'work'})");
+ok("!!requireTask(first).completedAt && requireTask(second).stage==='work'",'completed and tracking');
+fail("updateTaskRecord(first,{stage:'work'})",/зависимые/);
+run("updateTaskRecord(second,{stage:'inbox'});updateTaskRecord(first,{stage:'work'})");
+ok("requireTask(first).completedAt===null",'reopen resets timestamp');
+fail("updateTaskRecord(first,{stage:'inbox',depends:[second]})",/нарушает/);
+ok("requireTask(first).depends.length===0",'transaction rollback');
+run("addComment(first,'<img src=x onerror=alert(1)>')");ok("requireTask(first).comments[0].text.startsWith('<img') && esc(requireTask(first).comments[0].text).includes('&lt;img')",'comment escaping');
+ok("S.activity.filter(a=>a.taskId===first).length>=7",'history tracked');
+ok("JSON.parse(localStorage.getItem(KEY)).tasks.length===15",'autosave');
+run("const copy=structuredClone(S);copy.tasks[0].due='2026-02-30'");ok('!validState(copy)','invalid dates rejected');
+run("const duplicate=structuredClone(S);duplicate.people.push(duplicate.people[0])");ok('!validState(duplicate)','duplicate people rejected');
+run("const cycle=structuredClone(S);cycle.tasks.find(t=>t.id===first).depends=[second]");ok('!validState(cycle)','dependency cycle rejected');
+// Full isolated demonstration exercises the same command layer as the forms.
+run("const beforeDemo=JSON.stringify(S);");
+const diskBefore=values.get('compliance-studio-v2');
+run('startDemo();');let guard=0;while(run('V2.demo.index<V2.demo.steps.length && V2.demo.playing')&&guard++<100)run('nextDemo()');
+ok('V2.demo.index===V2.demo.steps.length','full scenario reached end');
+ok('V2.demo.logs.every(l=>l.result===\'OK\')','scenario all steps succeeded');
+ok('assemblyReadiness().all && V2.pumpRunning','assembled and running');
+ok('V2.demo.ids.every(id=>requireTask(id).stage===\'done\' && requireTask(id).result && requireTask(id).checks.every(c=>c.done))','five complete tasks');
+assert.equal(values.get('compliance-studio-v2'),diskBefore);count++;
+fs.writeFileSync(require('node:path').join(resultDir,'demo-protocol.json'),run('JSON.stringify(V2.demo.logs,null,2)'));
+run('exitDemo()');ok('JSON.stringify(S)===beforeDemo','demonstration restores exact workspace');
+// Sample two complete rotations; the rod and rocker must keep constant lengths.
+for(let i=0;i<=720;i++){const m=run('mechanism('+i+'*Math.PI/180)');assert(Number.isFinite(m.theta));assert(Math.abs(m.rodLength-178)<1e-8);assert(Math.abs(m.beamLength-134)<1e-8);}
+count++;
+fs.writeFileSync(require('node:path').join(resultDir,'automated-results.json'),JSON.stringify({passed:count,mechanismSamples:721,scenarioSteps:guard,at:new Date().toISOString()},null,2));
+console.log('PASS',count,'checks; 721 geometry samples;',guard,'scenario commands; state restored.');

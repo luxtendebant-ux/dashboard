@@ -1,0 +1,9 @@
+{
+  "name":"legal-w12-workspace",
+  "version":"5.0.0",
+  "private":true,
+  "engines":{"node":">=20"},
+  "scripts":{"start":"node server.cjs","build":"node build.cjs","test":"node test-all.cjs"},
+  "dependencies":{"exceljs":"4.4.0"},
+  "devDependencies":{"linkedom":"0.18.12","three":"0.160.1"}
+}

@@ -1,0 +1,355 @@
+{
+  "at": "2026-11-12T08:48:29.623Z",
+  "timezone": "Asia/Irkutsk",
+  "passed": 73,
+  "total": 73,
+  "suites": [
+    {
+      "name": "domain, Excel and kinematics",
+      "results": [
+        {
+          "name": "Seed validates, 5 leaf tasks, a parent and 12 cylinders",
+          "passed": true
+        },
+        {
+          "name": "Dependencies stop premature work",
+          "passed": true
+        },
+        {
+          "name": "Result cannot skip approval",
+          "passed": true
+        },
+        {
+          "name": "Weights calculate readiness independently of acceptance",
+          "passed": true
+        },
+        {
+          "name": "Unknown manual assignee is created and normalized",
+          "passed": true
+        },
+        {
+          "name": "Hierarchy cycles are rejected",
+          "passed": true
+        },
+        {
+          "name": "Dependency cycles are rejected",
+          "passed": true
+        },
+        {
+          "name": "Invalid date and non-finite effort rejected",
+          "passed": true
+        },
+        {
+          "name": "Calendar exceptions affect forecast; external date stays fixed",
+          "passed": true
+        },
+        {
+          "name": "Observer cannot create or change tasks",
+          "passed": true
+        },
+        {
+          "name": "Managers cannot grant admin role",
+          "passed": true
+        },
+        {
+          "name": "Stale task revision is rejected",
+          "passed": true
+        },
+        {
+          "name": "Same commands complete all 5 jobs and manager acceptance",
+          "passed": true
+        },
+        {
+          "name": "Material result edit invalidates previous approval",
+          "passed": true
+        },
+        {
+          "name": "XLSX export contains all structured sheets and tables",
+          "passed": true
+        },
+        {
+          "name": "Formula cached values match independent domain calculations",
+          "passed": true
+        },
+        {
+          "name": "Unedited Excel round trip has zero import changes",
+          "passed": true
+        },
+        {
+          "name": "Approved tasks and textual document versions survive XLSX",
+          "passed": true
+        },
+        {
+          "name": "Task export keeps descendants, comments, links and live status",
+          "passed": true
+        },
+        {
+          "name": "Working copy merges edits with retained IDs",
+          "passed": true
+        },
+        {
+          "name": "Concurrent edit requires explicit conflict choice",
+          "passed": true
+        },
+        {
+          "name": "Snapshot cannot write back; approvals cannot be forged",
+          "passed": true
+        },
+        {
+          "name": "Damaged column keys are detected",
+          "passed": true
+        },
+        {
+          "name": "W12 has 12 pistons, 12 rods and physically constant connecting rods",
+          "passed": true
+        },
+        {
+          "name": "Engine geometry remains finite and all parts fit at 100 percent",
+          "passed": true
+        },
+        {
+          "name": "Previous dashboard JSON retains custom people, checks, links and history",
+          "passed": true
+        },
+        {
+          "name": "Migration rejects invalid data instead of silently changing dates",
+          "passed": true
+        },
+        {
+          "name": "Excel import cannot skip workflow stages or alter accepted results",
+          "passed": true
+        },
+        {
+          "name": "Same revision with changed content still creates a conflict",
+          "passed": true
+        }
+      ],
+      "passed": 29,
+      "total": 29,
+      "scenarioCommands": 34,
+      "kinematicSamples": 8652
+    },
+    {
+      "name": "interface",
+      "results": [
+        {
+          "name": "Full application initializes with an engine and 9 sections",
+          "passed": true
+        },
+        {
+          "name": "All main sections render without errors",
+          "passed": true
+        },
+        {
+          "name": "Gantt contains forecast bars and critical path",
+          "passed": true
+        },
+        {
+          "name": "Task form accepts manual full name and expected result",
+          "passed": true
+        },
+        {
+          "name": "Undo and redo restore task and employee together",
+          "passed": true
+        },
+        {
+          "name": "Hierarchy form creates a complex task",
+          "passed": true
+        },
+        {
+          "name": "Subtask creation preserves parent reference",
+          "passed": true
+        },
+        {
+          "name": "Template populates check steps",
+          "passed": true
+        },
+        {
+          "name": "Renaming the main title retains the task ID",
+          "passed": true
+        },
+        {
+          "name": "Team supports new staff with arbitrary names",
+          "passed": true
+        },
+        {
+          "name": "Export panel includes JSON and Excel with formulas",
+          "passed": true
+        },
+        {
+          "name": "Task JSON export keeps current data and IDs",
+          "passed": true
+        },
+        {
+          "name": "Application exports a valid live-task XLSX file",
+          "passed": true
+        },
+        {
+          "name": "Demo is isolated and reaches actual acceptance before engine start",
+          "passed": true
+        },
+        {
+          "name": "Local persistence contains tasks, team and UI preference",
+          "passed": true
+        },
+        {
+          "name": "Ordinary author has password-free employee creation and configuration controls",
+          "passed": true
+        },
+        {
+          "name": "Disabled administrator gate never prompts for a password",
+          "passed": true
+        },
+        {
+          "name": "No uncaught application errors",
+          "passed": true
+        }
+      ],
+      "passed": 18,
+      "total": 18,
+      "type": "offline DOM emulation, not browser layout QA"
+    },
+    {
+      "name": "Excel file service",
+      "results": [
+        {
+          "name": "Service creates an actual Excel database and reopens it",
+          "passed": true
+        },
+        {
+          "name": "A second service cannot own the same workbook",
+          "passed": true
+        },
+        {
+          "name": "Service uses shared workflow and permission rules",
+          "passed": true
+        },
+        {
+          "name": "Concurrent writes reject stale revision instead of overwriting",
+          "passed": true
+        },
+        {
+          "name": "Retry operation ID does not duplicate a command",
+          "passed": true
+        },
+        {
+          "name": "Ten parallel writers preserve all accepted changes with retry",
+          "passed": true
+        },
+        {
+          "name": "Rejected disk write leaves authoritative state unchanged",
+          "passed": true
+        },
+        {
+          "name": "Written data, operation IDs and backup survive service restart",
+          "passed": true
+        },
+        {
+          "name": "Restricted cases are filtered before returning data",
+          "passed": true
+        },
+        {
+          "name": "An external Excel-file edit is detected before any overwrite",
+          "passed": true
+        }
+      ],
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "name": "API handlers",
+      "results": [
+        {
+          "name": "API denies unauthenticated access and wrong login code",
+          "passed": true
+        },
+        {
+          "name": "Login sets HttpOnly cookie and returns CSRF token",
+          "passed": true
+        },
+        {
+          "name": "CSRF token and same-origin checks reject forged writes",
+          "passed": true
+        },
+        {
+          "name": "Server derives actor from session and enforces task permissions",
+          "passed": true
+        }
+      ],
+      "passed": 4,
+      "total": 4,
+      "type": "request handler tests without browser or network egress"
+    },
+    {
+      "name": "standalone bundle",
+      "results": [
+        {
+          "name": "Bundled browser libraries load without a CDN or Node module loader",
+          "passed": true
+        },
+        {
+          "name": "Actual browser Excel bundle generates and reads a working XLSX",
+          "passed": true
+        },
+        {
+          "name": "Standalone HTML includes all application code and pinned libraries",
+          "passed": true
+        }
+      ],
+      "passed": 3,
+      "total": 3,
+      "type": "browser-like JavaScript realm, not a real browser"
+    },
+    {
+      "name": "open administrator access",
+      "results": [
+        {
+          "name": "Administrator password is configured as a salted verifier and disabled",
+          "passed": true
+        },
+        {
+          "name": "Incorrect administrator password is rejected by the verifier",
+          "passed": true
+        },
+        {
+          "name": "Open mode permits staff, cases, calendars and templates for any active author",
+          "passed": true
+        },
+        {
+          "name": "Open access retains workflow and dependency validation",
+          "passed": true
+        },
+        {
+          "name": "Published HTML includes disabled verifier configuration",
+          "passed": true
+        }
+      ],
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "name": "animation frames",
+      "results": [
+        {
+          "name": "Engine parts assemble progressively without premature rotation",
+          "passed": true
+        },
+        {
+          "name": "Engine actually rotates after assembly and acceptance",
+          "passed": true
+        },
+        {
+          "name": "Pause freezes phase and increased speed changes motion",
+          "passed": true
+        },
+        {
+          "name": "Full assembly without final acceptance keeps engine stopped",
+          "passed": true
+        }
+      ],
+      "passed": 4,
+      "total": 4,
+      "type": "controlled animation frames in real Canvas 2D fallback; not browser WebGL"
+    }
+  ]
+}

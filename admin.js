@@ -1,0 +1,6 @@
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory(require('node:crypto').webcrypto,require('./admin-verifier.json'));else root.AdminAccess=factory(root.crypto,__ADMIN_VERIFIER__);})(typeof globalThis!=='undefined'?globalThis:this,function(crypto,config){
+'use strict';let unlocked=false;
+async function verify(password){if(!crypto?.subtle)throw Error('Проверка пароля требует современного браузера и HTTPS');const bytes=s=>Uint8Array.from(s.match(/../g)||[],v=>parseInt(v,16)),key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),{name:'PBKDF2'},false,['deriveBits']),actual=new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',salt:bytes(config.salt),iterations:config.iterations,hash:'SHA-256'},key,256)),expected=bytes(config.hash);let diff=actual.length^expected.length;for(let i=0;i<actual.length;i++)diff|=actual[i]^(expected[i]||0);return diff===0;}
+async function unlock(password){if(!await verify(password))throw Error('Неверный пароль администратора');unlocked=true;return true;}
+return {get enabled(){return config.enabled===true;},get unlocked(){return unlocked;},isOpen:()=>config.enabled!==true||unlocked,verify,unlock,lock:()=>{unlocked=false;},requireAdmin:()=>{if(config.enabled===true&&!unlocked)throw Error('Введите пароль администратора через кнопку доступа');}};
+});

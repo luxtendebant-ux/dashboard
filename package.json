@@ -1,0 +1,21 @@
+{
+  "name": "legal-w12-workspace",
+  "version": "5.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.cjs",
+    "build": "node build.cjs",
+    "test": "node test-all.cjs"
+  },
+  "dependencies": {
+    "exceljs": "4.4.0"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "0.1.80",
+    "linkedom": "0.18.12",
+    "three": "0.160.1"
+  }
+}

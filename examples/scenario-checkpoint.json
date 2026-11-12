@@ -1,0 +1,1326 @@
+{
+  "state": {
+    "schema": 5,
+    "id": "1fec3e97-ae24-430e-8964-29df63a68a23",
+    "revision": 8,
+    "createdAt": "2026-11-12T09:39:07.196Z",
+    "people": [
+      {
+        "id": "leader",
+        "name": "Марселлас Уоллес",
+        "role": "admin",
+        "department": "Руководство",
+        "active": true,
+        "rev": 1
+      },
+      {
+        "id": "anna",
+        "name": "Винсент Вега",
+        "role": "lawyer",
+        "department": "Договорная работа",
+        "active": true,
+        "rev": 1
+      },
+      {
+        "id": "mikhail",
+        "name": "Джулс Уиннфилд",
+        "role": "lawyer",
+        "department": "Комплаенс",
+        "active": true,
+        "rev": 1
+      },
+      {
+        "id": "elena",
+        "name": "Мия Уоллес",
+        "role": "lawyer",
+        "department": "Международные проекты",
+        "active": true,
+        "rev": 1
+      },
+      {
+        "id": "denis",
+        "name": "Бутч Кулидж",
+        "role": "lawyer",
+        "department": "Судебная работа",
+        "active": true,
+        "rev": 1
+      },
+      {
+        "id": "55960d91-90a0-40f7-9737-3ad80aac3d37",
+        "name": "Петрова Анна Сергеевна",
+        "role": "lawyer",
+        "department": "Юридический отдел",
+        "active": true,
+        "rev": 1
+      },
+      {
+        "id": "20980b5d-ea1f-41bb-a20f-dd69aa2ba291",
+        "name": "Соколов Михаил Андреевич",
+        "role": "lawyer",
+        "department": "Юридический отдел",
+        "active": true,
+        "rev": 1
+      },
+      {
+        "id": "9577a032-4c81-4ddd-825c-d85594d7748e",
+        "name": "Кузнецова Елена Викторовна",
+        "role": "lawyer",
+        "department": "Юридический отдел",
+        "active": true,
+        "rev": 1
+      }
+    ],
+    "cases": [
+      {
+        "id": "international",
+        "name": "Международный договор поставки",
+        "type": "international",
+        "goal": "Подготовить и принять согласованный комплект договора",
+        "owner": "leader",
+        "due": "2026-11-26",
+        "externalDue": "2026-11-30",
+        "timezone": "Asia/Irkutsk",
+        "jurisdictions": "Россия; ОАЭ",
+        "languages": "Русский; английский",
+        "confidentiality": "internal",
+        "members": [
+          "leader",
+          "anna",
+          "mikhail",
+          "elena",
+          "denis"
+        ],
+        "rev": 1
+      },
+      {
+        "id": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+        "name": "Тест Excel · Подготовка международного договора",
+        "type": "other",
+        "goal": "Три проверенных результата и решение руководителя",
+        "owner": "leader",
+        "due": "2026-11-26",
+        "externalDue": "",
+        "timezone": "Asia/Irkutsk",
+        "jurisdictions": "Россия",
+        "languages": "Русский",
+        "confidentiality": "internal",
+        "members": [
+          "leader",
+          "anna",
+          "mikhail",
+          "elena",
+          "denis"
+        ],
+        "rev": 1,
+        "updatedAt": "2026-11-12T09:39:07.229Z"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "summary",
+        "code": "ЮР-0001",
+        "caseId": "international",
+        "parentId": "",
+        "kind": "summary",
+        "title": "Согласовать международный договор",
+        "owner": "leader",
+        "reviewer": "leader",
+        "workType": "international",
+        "status": "queued",
+        "start": "2026-11-12",
+        "due": "2026-11-26",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 0,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "description": "Учебная задача. Данные можно менять.",
+        "expectedResult": "Подготовить и принять согласованный комплект договора",
+        "result": "",
+        "docVersion": 1,
+        "rev": 1,
+        "createdAt": "2026-11-12T09:39:07.211Z",
+        "updatedAt": "2026-11-12T09:39:07.211Z"
+      },
+      {
+        "id": "data",
+        "code": "ЮР-0002",
+        "caseId": "international",
+        "parentId": "summary",
+        "kind": "task",
+        "title": "Собрать исходный комплект",
+        "owner": "anna",
+        "reviewer": "leader",
+        "workType": "international",
+        "status": "queued",
+        "start": "2026-11-12",
+        "due": "2026-11-14",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "description": "Учебная задача. Данные можно менять.",
+        "expectedResult": "Полный комплект исходных документов",
+        "result": "",
+        "docVersion": 1,
+        "rev": 1,
+        "createdAt": "2026-11-12T09:39:07.211Z",
+        "updatedAt": "2026-11-12T09:39:07.211Z"
+      },
+      {
+        "id": "screen",
+        "code": "ЮР-0003",
+        "caseId": "international",
+        "parentId": "summary",
+        "kind": "task",
+        "title": "Проверить контрагента и условия оплаты",
+        "owner": "mikhail",
+        "reviewer": "leader",
+        "workType": "international",
+        "status": "queued",
+        "start": "2026-11-15",
+        "due": "2026-11-17",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "description": "Учебная задача. Данные можно менять.",
+        "expectedResult": "Заключение по контрагенту и оплате",
+        "result": "",
+        "docVersion": 1,
+        "rev": 1,
+        "createdAt": "2026-11-12T09:39:07.211Z",
+        "updatedAt": "2026-11-12T09:39:07.211Z"
+      },
+      {
+        "id": "law",
+        "code": "ЮР-0004",
+        "caseId": "international",
+        "parentId": "summary",
+        "kind": "task",
+        "title": "Согласовать применимое право и версии",
+        "owner": "elena",
+        "reviewer": "leader",
+        "workType": "international",
+        "status": "queued",
+        "start": "2026-11-15",
+        "due": "2026-11-19",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "description": "Учебная задача. Данные можно менять.",
+        "expectedResult": "Две сверенные языковые версии",
+        "result": "",
+        "docVersion": 1,
+        "rev": 1,
+        "createdAt": "2026-11-12T09:39:07.211Z",
+        "updatedAt": "2026-11-12T09:39:07.211Z"
+      },
+      {
+        "id": "dossier",
+        "code": "ЮР-0005",
+        "caseId": "international",
+        "parentId": "summary",
+        "kind": "task",
+        "title": "Объединить замечания и подготовить досье",
+        "owner": "denis",
+        "reviewer": "leader",
+        "workType": "international",
+        "status": "queued",
+        "start": "2026-11-20",
+        "due": "2026-11-22",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "description": "Учебная задача. Данные можно менять.",
+        "expectedResult": "Итоговый комплект замечаний",
+        "result": "",
+        "docVersion": 1,
+        "rev": 1,
+        "createdAt": "2026-11-12T09:39:07.211Z",
+        "updatedAt": "2026-11-12T09:39:07.211Z"
+      },
+      {
+        "id": "decision",
+        "code": "ЮР-0006",
+        "caseId": "international",
+        "parentId": "summary",
+        "kind": "task",
+        "title": "Подготовить решение руководителя",
+        "owner": "leader",
+        "reviewer": "leader",
+        "workType": "international",
+        "status": "queued",
+        "start": "2026-11-23",
+        "due": "2026-11-25",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "description": "Учебная задача. Данные можно менять.",
+        "expectedResult": "Принятое решение по комплекту",
+        "result": "",
+        "docVersion": 1,
+        "rev": 1,
+        "createdAt": "2026-11-12T09:39:07.211Z",
+        "updatedAt": "2026-11-12T09:39:07.211Z"
+      },
+      {
+        "id": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+        "code": "ЮР-0007",
+        "status": "queued",
+        "result": "",
+        "docVersion": 1,
+        "createdAt": "2026-11-12T09:39:07.245Z",
+        "rev": 1,
+        "title": "Подготовить и согласовать международный договор",
+        "description": "",
+        "expectedResult": "Приняты три подзадачи и итоговая позиция отдела",
+        "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+        "parentId": "",
+        "kind": "summary",
+        "workType": "other",
+        "owner": "leader",
+        "reviewer": "leader",
+        "start": "2026-11-12",
+        "due": "2026-11-15",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "waitReason": "",
+        "nextContact": "",
+        "updatedAt": "2026-11-12T09:39:07.245Z"
+      },
+      {
+        "id": "2b751a0a-8082-4733-8697-a69e9f54e364",
+        "code": "ЮР-0008",
+        "status": "active",
+        "result": "",
+        "docVersion": 1,
+        "createdAt": "2026-11-12T09:39:07.258Z",
+        "rev": 2,
+        "title": "Проверить комплект документов",
+        "description": "",
+        "expectedResult": "Опись документов проверена",
+        "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+        "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+        "kind": "task",
+        "workType": "other",
+        "owner": "55960d91-90a0-40f7-9737-3ad80aac3d37",
+        "reviewer": "leader",
+        "start": "2026-11-12",
+        "due": "2026-11-14",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "waitReason": "",
+        "nextContact": "",
+        "updatedAt": "2026-11-12T09:39:07.266Z"
+      },
+      {
+        "id": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+        "code": "ЮР-0009",
+        "status": "active",
+        "result": "",
+        "docVersion": 1,
+        "createdAt": "2026-11-12T09:39:07.281Z",
+        "rev": 2,
+        "title": "Подготовить правовую позицию",
+        "description": "",
+        "expectedResult": "Таблица замечаний подготовлена",
+        "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+        "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+        "kind": "task",
+        "workType": "other",
+        "owner": "20980b5d-ea1f-41bb-a20f-dd69aa2ba291",
+        "reviewer": "leader",
+        "start": "2026-11-12",
+        "due": "2026-11-16",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "waitReason": "",
+        "nextContact": "",
+        "updatedAt": "2026-11-12T09:39:07.289Z"
+      },
+      {
+        "id": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+        "code": "ЮР-0010",
+        "status": "active",
+        "result": "",
+        "docVersion": 1,
+        "createdAt": "2026-11-12T09:39:07.301Z",
+        "rev": 2,
+        "title": "Сверить языковые версии",
+        "description": "",
+        "expectedResult": "Русская и английская версии сверены",
+        "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+        "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+        "kind": "task",
+        "workType": "other",
+        "owner": "9577a032-4c81-4ddd-825c-d85594d7748e",
+        "reviewer": "leader",
+        "start": "2026-11-12",
+        "due": "2026-11-18",
+        "externalDue": "",
+        "deadlineTime": "18:00",
+        "timezone": "Asia/Irkutsk",
+        "calendar": "ru",
+        "weight": 1,
+        "effort": 4,
+        "actual": 0,
+        "mandatory": true,
+        "join": "all",
+        "priority": "normal",
+        "waitReason": "",
+        "nextContact": "",
+        "updatedAt": "2026-11-12T09:39:07.313Z"
+      }
+    ],
+    "steps": [
+      {
+        "id": "bd9b9747-384c-45c6-8c16-a41959c7a510",
+        "taskId": "data",
+        "text": "Получить исходные материалы",
+        "owner": "anna",
+        "due": "2026-11-14",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "e7206bfc-f977-4314-a5bc-efa529b237bf",
+        "taskId": "data",
+        "text": "Подготовить и проверить результат",
+        "owner": "anna",
+        "due": "2026-11-14",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "249969f9-fb15-4263-92e8-1592f0efb022",
+        "taskId": "screen",
+        "text": "Получить исходные материалы",
+        "owner": "mikhail",
+        "due": "2026-11-17",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "e7cdc790-93d9-4ce9-afb9-58af40a79992",
+        "taskId": "screen",
+        "text": "Подготовить и проверить результат",
+        "owner": "mikhail",
+        "due": "2026-11-17",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "3c669495-5076-4401-a1c7-b23ab68990f2",
+        "taskId": "law",
+        "text": "Получить исходные материалы",
+        "owner": "elena",
+        "due": "2026-11-19",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "233e3b96-81f0-48a8-a185-fce6f061efc5",
+        "taskId": "law",
+        "text": "Подготовить и проверить результат",
+        "owner": "elena",
+        "due": "2026-11-19",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "6d3d771b-547f-4464-b446-502c58acabaa",
+        "taskId": "dossier",
+        "text": "Получить исходные материалы",
+        "owner": "denis",
+        "due": "2026-11-22",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "bc387ee6-9a5b-4071-9abc-ec8d75e83cdc",
+        "taskId": "dossier",
+        "text": "Подготовить и проверить результат",
+        "owner": "denis",
+        "due": "2026-11-22",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "c82c3aaa-7fd4-4b96-a117-9dc391bb0724",
+        "taskId": "decision",
+        "text": "Получить исходные материалы",
+        "owner": "leader",
+        "due": "2026-11-25",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "5e6f5b41-8464-4b1a-bfde-dfd83d791f46",
+        "taskId": "decision",
+        "text": "Подготовить и проверить результат",
+        "owner": "leader",
+        "due": "2026-11-25",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "e5d8d2d7-6369-44c4-ab89-ef65670e298a",
+        "taskId": "2b751a0a-8082-4733-8697-a69e9f54e364",
+        "text": "Подготовить и проверить результат",
+        "owner": "55960d91-90a0-40f7-9737-3ad80aac3d37",
+        "due": "2026-11-15",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "51637b2d-2c19-4586-941a-6b64426c575d",
+        "taskId": "2b751a0a-8082-4733-8697-a69e9f54e364",
+        "text": "Зафиксировать результат в рабочем Excel",
+        "owner": "55960d91-90a0-40f7-9737-3ad80aac3d37",
+        "due": "2026-11-14",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "ff278718-17fa-431e-8f5c-3ccf8b6d8704",
+        "taskId": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+        "text": "Подготовить и проверить результат",
+        "owner": "20980b5d-ea1f-41bb-a20f-dd69aa2ba291",
+        "due": "2026-11-15",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "2a93f9f3-8518-4faf-b401-b55ea940c46c",
+        "taskId": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+        "text": "Зафиксировать результат в рабочем Excel",
+        "owner": "20980b5d-ea1f-41bb-a20f-dd69aa2ba291",
+        "due": "2026-11-16",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "a6cda75b-1ff3-4c08-a241-c0a9e889e56e",
+        "taskId": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+        "text": "Подготовить и проверить результат",
+        "owner": "9577a032-4c81-4ddd-825c-d85594d7748e",
+        "due": "2026-11-15",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      },
+      {
+        "id": "a8c5103a-a597-45dc-990b-b3398d60b2d6",
+        "taskId": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+        "text": "Зафиксировать результат в рабочем Excel",
+        "owner": "9577a032-4c81-4ddd-825c-d85594d7748e",
+        "due": "2026-11-18",
+        "weight": 1,
+        "done": false,
+        "rev": 1
+      }
+    ],
+    "links": [
+      {
+        "id": "96dd53f4-1f37-4474-a338-15baed276501",
+        "from": "data",
+        "to": "screen",
+        "lag": 0,
+        "rev": 1
+      },
+      {
+        "id": "0b1107ac-2545-4c17-85b8-ae3a93d8fc05",
+        "from": "data",
+        "to": "law",
+        "lag": 0,
+        "rev": 1
+      },
+      {
+        "id": "9ec1187e-8b32-4bd3-b4de-26e6582d105d",
+        "from": "screen",
+        "to": "dossier",
+        "lag": 0,
+        "rev": 1
+      },
+      {
+        "id": "863ad2ee-f11c-43e8-86d0-054852cfa69d",
+        "from": "law",
+        "to": "dossier",
+        "lag": 0,
+        "rev": 1
+      },
+      {
+        "id": "7264b07f-4d52-49a1-91f1-b2d4a56a1860",
+        "from": "dossier",
+        "to": "decision",
+        "lag": 0,
+        "rev": 1
+      }
+    ],
+    "assignments": [],
+    "approvals": [],
+    "documents": [],
+    "comments": [],
+    "events": [
+      {
+        "id": "4a7433a1-7b13-4426-b618-983730a9823f",
+        "at": "2026-11-12T09:39:07.313Z",
+        "actor": "leader",
+        "type": "task.transition",
+        "taskId": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+        "text": "Изменён этап задачи",
+        "changes": [
+          {
+            "table": "tasks",
+            "id": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+            "before": {
+              "id": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+              "code": "ЮР-0010",
+              "status": "queued",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.301Z",
+              "rev": 1,
+              "title": "Сверить языковые версии",
+              "description": "",
+              "expectedResult": "Русская и английская версии сверены",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "9577a032-4c81-4ddd-825c-d85594d7748e",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-18",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.301Z"
+            },
+            "after": {
+              "id": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+              "code": "ЮР-0010",
+              "status": "active",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.301Z",
+              "rev": 2,
+              "title": "Сверить языковые версии",
+              "description": "",
+              "expectedResult": "Русская и английская версии сверены",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "9577a032-4c81-4ddd-825c-d85594d7748e",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-18",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.313Z"
+            }
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "90cc8ba6-1da3-4cf5-adb5-e2de39c26b3b",
+        "at": "2026-11-12T09:39:07.301Z",
+        "actor": "leader",
+        "type": "task.save",
+        "taskId": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+        "text": "Создана задача",
+        "changes": [
+          {
+            "table": "tasks",
+            "id": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+            "before": null,
+            "after": {
+              "id": "a175d057-dc07-4b9b-955b-4fc4b68eff9e",
+              "code": "ЮР-0010",
+              "status": "queued",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.301Z",
+              "rev": 1,
+              "title": "Сверить языковые версии",
+              "description": "",
+              "expectedResult": "Русская и английская версии сверены",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "9577a032-4c81-4ddd-825c-d85594d7748e",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-18",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.301Z"
+            }
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "bda0a5c3-173e-48dc-9fbe-cb8c3aaeb9be",
+        "at": "2026-11-12T09:39:07.289Z",
+        "actor": "leader",
+        "type": "task.transition",
+        "taskId": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+        "text": "Изменён этап задачи",
+        "changes": [
+          {
+            "table": "tasks",
+            "id": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+            "before": {
+              "id": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+              "code": "ЮР-0009",
+              "status": "queued",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.281Z",
+              "rev": 1,
+              "title": "Подготовить правовую позицию",
+              "description": "",
+              "expectedResult": "Таблица замечаний подготовлена",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "20980b5d-ea1f-41bb-a20f-dd69aa2ba291",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-16",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.281Z"
+            },
+            "after": {
+              "id": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+              "code": "ЮР-0009",
+              "status": "active",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.281Z",
+              "rev": 2,
+              "title": "Подготовить правовую позицию",
+              "description": "",
+              "expectedResult": "Таблица замечаний подготовлена",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "20980b5d-ea1f-41bb-a20f-dd69aa2ba291",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-16",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.289Z"
+            }
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "e8f6e5f7-f33b-4ec3-9a38-ae389c2632be",
+        "at": "2026-11-12T09:39:07.281Z",
+        "actor": "leader",
+        "type": "task.save",
+        "taskId": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+        "text": "Создана задача",
+        "changes": [
+          {
+            "table": "tasks",
+            "id": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+            "before": null,
+            "after": {
+              "id": "bf66e8bc-15f9-4978-bbda-124487d180a8",
+              "code": "ЮР-0009",
+              "status": "queued",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.281Z",
+              "rev": 1,
+              "title": "Подготовить правовую позицию",
+              "description": "",
+              "expectedResult": "Таблица замечаний подготовлена",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "20980b5d-ea1f-41bb-a20f-dd69aa2ba291",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-16",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.281Z"
+            }
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "a031c814-5edc-4188-9283-02eef5bac9bf",
+        "at": "2026-11-12T09:39:07.266Z",
+        "actor": "leader",
+        "type": "task.transition",
+        "taskId": "2b751a0a-8082-4733-8697-a69e9f54e364",
+        "text": "Изменён этап задачи",
+        "changes": [
+          {
+            "table": "tasks",
+            "id": "2b751a0a-8082-4733-8697-a69e9f54e364",
+            "before": {
+              "id": "2b751a0a-8082-4733-8697-a69e9f54e364",
+              "code": "ЮР-0008",
+              "status": "queued",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.258Z",
+              "rev": 1,
+              "title": "Проверить комплект документов",
+              "description": "",
+              "expectedResult": "Опись документов проверена",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "55960d91-90a0-40f7-9737-3ad80aac3d37",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-14",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.258Z"
+            },
+            "after": {
+              "id": "2b751a0a-8082-4733-8697-a69e9f54e364",
+              "code": "ЮР-0008",
+              "status": "active",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.258Z",
+              "rev": 2,
+              "title": "Проверить комплект документов",
+              "description": "",
+              "expectedResult": "Опись документов проверена",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "55960d91-90a0-40f7-9737-3ad80aac3d37",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-14",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.266Z"
+            }
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "62f4d272-6dcd-4603-960e-40bba8f86435",
+        "at": "2026-11-12T09:39:07.258Z",
+        "actor": "leader",
+        "type": "task.save",
+        "taskId": "2b751a0a-8082-4733-8697-a69e9f54e364",
+        "text": "Создана задача",
+        "changes": [
+          {
+            "table": "tasks",
+            "id": "2b751a0a-8082-4733-8697-a69e9f54e364",
+            "before": null,
+            "after": {
+              "id": "2b751a0a-8082-4733-8697-a69e9f54e364",
+              "code": "ЮР-0008",
+              "status": "queued",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.258Z",
+              "rev": 1,
+              "title": "Проверить комплект документов",
+              "description": "",
+              "expectedResult": "Опись документов проверена",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "kind": "task",
+              "workType": "other",
+              "owner": "55960d91-90a0-40f7-9737-3ad80aac3d37",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-14",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.258Z"
+            }
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "5a0473c0-1647-4f72-a889-54c00800da69",
+        "at": "2026-11-12T09:39:07.245Z",
+        "actor": "leader",
+        "type": "task.save",
+        "taskId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+        "text": "Создана задача",
+        "changes": [
+          {
+            "table": "tasks",
+            "id": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+            "before": null,
+            "after": {
+              "id": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+              "code": "ЮР-0007",
+              "status": "queued",
+              "result": "",
+              "docVersion": 1,
+              "createdAt": "2026-11-12T09:39:07.245Z",
+              "rev": 1,
+              "title": "Подготовить и согласовать международный договор",
+              "description": "",
+              "expectedResult": "Приняты три подзадачи и итоговая позиция отдела",
+              "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "parentId": "",
+              "kind": "summary",
+              "workType": "other",
+              "owner": "leader",
+              "reviewer": "leader",
+              "start": "2026-11-12",
+              "due": "2026-11-15",
+              "externalDue": "",
+              "deadlineTime": "18:00",
+              "timezone": "Asia/Irkutsk",
+              "calendar": "ru",
+              "weight": 1,
+              "effort": 4,
+              "actual": 0,
+              "mandatory": true,
+              "join": "all",
+              "priority": "normal",
+              "waitReason": "",
+              "nextContact": "",
+              "updatedAt": "2026-11-12T09:39:07.245Z"
+            }
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "5d2b1162-779a-4eaf-9406-e562a317627b",
+        "at": "2026-11-12T09:39:07.229Z",
+        "actor": "leader",
+        "type": "case.save",
+        "taskId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+        "text": "Сохранено юридическое дело",
+        "changes": [
+          {
+            "table": "cases",
+            "id": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+            "before": null,
+            "after": {
+              "id": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+              "name": "Тест Excel · Подготовка международного договора",
+              "type": "other",
+              "goal": "Три проверенных результата и решение руководителя",
+              "owner": "leader",
+              "due": "2026-11-26",
+              "externalDue": "",
+              "timezone": "Asia/Irkutsk",
+              "jurisdictions": "Россия",
+              "languages": "Русский",
+              "confidentiality": "internal",
+              "members": [
+                "leader",
+                "anna",
+                "mikhail",
+                "elena",
+                "denis"
+              ],
+              "rev": 1,
+              "updatedAt": "2026-11-12T09:39:07.229Z"
+            }
+          }
+        ],
+        "rev": 1
+      }
+    ],
+    "calendars": [
+      {
+        "id": "ru",
+        "name": "Пн–Пт · настраиваемый",
+        "weekends": [
+          0,
+          6
+        ],
+        "holidays": [],
+        "rev": 1
+      }
+    ],
+    "templates": [
+      {
+        "id": "contract",
+        "name": "Договор",
+        "workType": "contract",
+        "steps": [
+          {
+            "text": "Получить исходные материалы",
+            "weight": 1
+          },
+          {
+            "text": "Провести правовой анализ",
+            "weight": 1
+          },
+          {
+            "text": "Подготовить результат",
+            "weight": 1
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "opinion",
+        "name": "Правовое заключение",
+        "workType": "opinion",
+        "steps": [
+          {
+            "text": "Получить исходные материалы",
+            "weight": 1
+          },
+          {
+            "text": "Провести правовой анализ",
+            "weight": 1
+          },
+          {
+            "text": "Подготовить результат",
+            "weight": 1
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "claim",
+        "name": "Претензия",
+        "workType": "claim",
+        "steps": [
+          {
+            "text": "Получить исходные материалы",
+            "weight": 1
+          },
+          {
+            "text": "Провести правовой анализ",
+            "weight": 1
+          },
+          {
+            "text": "Подготовить результат",
+            "weight": 1
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "litigation",
+        "name": "Судебное дело",
+        "workType": "litigation",
+        "steps": [
+          {
+            "text": "Изучить материалы дела",
+            "weight": 1
+          },
+          {
+            "text": "Проверить обязательную дату",
+            "weight": 1
+          },
+          {
+            "text": "Подготовить процессуальный документ",
+            "weight": 1
+          },
+          {
+            "text": "Проверить комплект приложений",
+            "weight": 1
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "corporate",
+        "name": "Корпоративная процедура",
+        "workType": "corporate",
+        "steps": [
+          {
+            "text": "Получить исходные материалы",
+            "weight": 1
+          },
+          {
+            "text": "Провести правовой анализ",
+            "weight": 1
+          },
+          {
+            "text": "Подготовить результат",
+            "weight": 1
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "international",
+        "name": "Международная задача",
+        "workType": "international",
+        "steps": [
+          {
+            "text": "Собрать документы и определить юрисдикции",
+            "weight": 1
+          },
+          {
+            "text": "Получить позиции консультантов",
+            "weight": 1
+          },
+          {
+            "text": "Согласовать языковые версии",
+            "weight": 1
+          },
+          {
+            "text": "Подготовить итоговую рекомендацию",
+            "weight": 1
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "compliance",
+        "name": "Комплаенс",
+        "workType": "compliance",
+        "steps": [
+          {
+            "text": "Получить исходные материалы",
+            "weight": 1
+          },
+          {
+            "text": "Провести правовой анализ",
+            "weight": 1
+          },
+          {
+            "text": "Подготовить результат",
+            "weight": 1
+          }
+        ],
+        "rev": 1
+      },
+      {
+        "id": "other",
+        "name": "Другое",
+        "workType": "other",
+        "steps": [
+          {
+            "text": "Получить исходные материалы",
+            "weight": 1
+          },
+          {
+            "text": "Провести правовой анализ",
+            "weight": 1
+          },
+          {
+            "text": "Подготовить результат",
+            "weight": 1
+          }
+        ],
+        "rev": 1
+      }
+    ],
+    "updatedAt": "2026-11-12T09:39:07.313Z"
+  },
+  "ui": {
+    "page": "overview",
+    "actor": "leader",
+    "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+    "q": "",
+    "owner": "",
+    "view": "board",
+    "mode": "working",
+    "scope": "case",
+    "scopeId": "",
+    "enginePaused": false,
+    "engineSpeed": 1,
+    "cutaway": true,
+    "exportCase": "eca4561d-ba53-4144-bd32-c6e1c81e607f"
+  },
+  "caseId": "eca4561d-ba53-4144-bd32-c6e1c81e607f",
+  "parentId": "b80473d7-dbb7-45e3-8841-77dc701fa4fb",
+  "ids": [
+    "2b751a0a-8082-4733-8697-a69e9f54e364",
+    "bf66e8bc-15f9-4978-bbda-124487d180a8",
+    "a175d057-dc07-4b9b-955b-4fc4b68eff9e"
+  ]
+}

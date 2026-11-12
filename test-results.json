@@ -1,8 +1,8 @@
 {
-  "at": "2026-11-12T08:48:29.623Z",
+  "at": "2026-11-12T09:47:34.058Z",
   "timezone": "Asia/Irkutsk",
-  "passed": 73,
-  "total": 73,
+  "passed": 83,
+  "total": 83,
   "suites": [
     {
       "name": "domain, Excel and kinematics",
@@ -335,6 +335,10 @@
           "passed": true
         },
         {
+          "name": "Fuel line primes before the starter begins rotating the crankshaft",
+          "passed": true
+        },
+        {
           "name": "Engine actually rotates after assembly and acceptance",
           "passed": true
         },
@@ -347,9 +351,53 @@
           "passed": true
         }
       ],
-      "passed": 4,
-      "total": 4,
+      "passed": 5,
+      "total": 5,
       "type": "controlled animation frames in real Canvas 2D fallback; not browser WebGL"
+    },
+    {
+      "name": "W12 and Excel workflow regression",
+      "results": [
+        {
+          "name": "Ready-made W12 source has its pinned provenance and actual four-row architecture",
+          "passed": true
+        },
+        {
+          "name": "Six assembly stages install real components and keep chains hidden until the cam drive is seated",
+          "passed": true
+        },
+        {
+          "name": "Every fuel branch connects tank, pump, filter and all twelve physical injector fittings",
+          "passed": true
+        },
+        {
+          "name": "Both timing chains remain closed and continuous over full crank and cam cycles",
+          "passed": true
+        },
+        {
+          "name": "Simple, complex and manual-name scenario is built using domain commands",
+          "passed": true
+        },
+        {
+          "name": "Excel demo loads all four task results and reaches 100 percent before restoring the original board",
+          "passed": true
+        },
+        {
+          "name": "Manual full name is inherited by new default steps in the actual task form",
+          "passed": true
+        },
+        {
+          "name": "Engine progress respects nested parent weights rather than counting flattened leaves",
+          "passed": true
+        },
+        {
+          "name": "Valid namespace-prefixed OOXML with absolute table relationships imports without changes",
+          "passed": true
+        }
+      ],
+      "passed": 9,
+      "total": 9,
+      "type": "ready W12 geometry, connection continuity, complete Excel demo and UI/domain regression tests"
     }
   ]
 }

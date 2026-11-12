@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-12T09:51:42.711Z",
+  "passed": 8,
+  "total": 8,
+  "results": [
+    {
+      "name": "Actual edited XLSX is loaded through the file input and merge dialog",
+      "passed": true
+    },
+    {
+      "name": "Excel fills six steps, descriptions, results and actual hours without changing IDs",
+      "passed": true
+    },
+    {
+      "name": "Subtask 1 enters review and is accepted through its task card",
+      "passed": true
+    },
+    {
+      "name": "Subtask 2 enters review and is accepted through its task card",
+      "passed": true
+    },
+    {
+      "name": "Subtask 3 enters review and is accepted through its task card",
+      "passed": true
+    },
+    {
+      "name": "Parent result loaded from Excel is accepted and unlocks the engine at 100 percent",
+      "passed": true
+    },
+    {
+      "name": "Final JSON and XLSX retain the four accepted results and working formulas",
+      "passed": true
+    },
+    {
+      "name": "All controls remain open without administrator password",
+      "passed": true
+    }
+  ],
+  "acceptedSubtasks": 3,
+  "acceptedParent": true,
+  "progressLevels": [
+    0.3333333333333333,
+    0.6666666666666666,
+    1
+  ],
+  "engineReady": true,
+  "source": "XLSX edited by independent Artifact Tool, actual application file input and task-card event handlers in DOM emulation"
+}
